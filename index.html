@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altap Virtual Printer</title>
+<style>
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 25px 12px;
+}
+h1 { color: #ff4d80; }
+.printer {
+  background: #292929;
+  border-radius: 20px;
+  width: 250px;
+  margin: 35px auto 0;
+  padding: 25px 15px;
+  box-shadow: 0 10px 30px #0008;
+}
+.slot {
+  height: 8px;
+  background: #050505;
+  border-radius: 8px;
+}
+.paper {
+  width: 155px;
+  margin: 0 auto;
+  background: white;
+  color: #222;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 2s ease;
+}
+.paper.show {
+  max-height: 300px;
+  padding: 12px 0;
+}
+.paper img {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+}
+button {
+  background: #ff4d80;
+  color: white;
+  border: 0;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 20px 5px;
+}
+</style>
+</head>
+<body>
+<h1>ALTAP PRINTER</h1>
+<p>TikTok LIVE Virtual Printer</p>
+
+<div class="printer">
+  <div class="slot"></div>
+  <div id="paper" class="paper">
+    <img id="photo" alt="Profil şəkli">
+    <p id="username">TikTok izləyicisi</p>
+    <p>ALTAP LIVE ❤️</p>
+  </div>
+</div>
+
+<button onclick="demo()">Sınaq et</button>
+<p id="status">Printer hazırdır</p>
+
+<script>
+function demo() {
+  const paper = document.getElementById('paper');
+  document.getElementById('photo').src =
+    'https://placehold.co/300x300/png?text=ALTAP';
+  document.getElementById('username').textContent =
+    'Sınaq izləyicisi';
+  paper.classList.remove('show');
+  void paper.offsetWidth;
+  paper.classList.add('show');
+  document.getElementById('status').textContent =
+    'Şəkil çap olunur...';
+}
+</script>
+</body>
+</html>
